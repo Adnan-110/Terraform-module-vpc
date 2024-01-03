@@ -4,3 +4,7 @@ resource "aws_vpc" "main" {
     Name = "roboshop-${var.ENV}-vpc"
   }
 }
+
+output "ENV" {
+    value = var.ENV
+}
