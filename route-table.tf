@@ -31,6 +31,14 @@ resource "aws_route_table" "private_rt" {
   }
 
   tags = {
-    Name = "roboshop-${var.ENV}-public-rt"
+    Name = "roboshop-${var.ENV}-private-rt"
   }
+}
+
+# Private Subnet Association
+resource "aws_route_table_association" "private_subnet_rt_association" {
+    count           = length(aws_subnet.private-subnet.*.id)
+
+    subnet_id       = element(aws_subnet.private-subnet.*.id, count.index)
+    route_table_id  = aws_route_table.private_rt.id
 }
