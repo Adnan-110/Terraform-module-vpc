@@ -7,15 +7,15 @@ output "VPC_CIDR" {
 }
 
 output "PRIVATE_SUBNET_IDS" {
-    value  = aws_subnet.private_subnet.*.id
+    value  = aws_subnet.private-subnet.*.id
 }
 
 output "PUBLIC_SUBNET_IDS" {
-    value  = aws_subnet.public_subnet.*.id
+    value  = aws_subnet.public-subnet.*.id
 }
 
 output "PRIVATE_SUBNET_CIDR" {
-    value  = aws_subnet.private_subnet.*.cidr_block
+    value  = aws_subnet.private-subnet.*.cidr_block
 }
 
 output "PUBLIC_SUBNET_CIDR" {
