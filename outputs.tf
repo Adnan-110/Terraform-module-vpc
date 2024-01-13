@@ -19,7 +19,7 @@ output "PRIVATE_SUBNET_CIDR" {
 }
 
 output "PUBLIC_SUBNET_CIDR" {
-    value  = aws_subnet.public_subnet.*.cidr_block
+    value  = aws_subnet.public-subnet.*.cidr_block
 }
 
 output "DEFAULT_VPC_CIDR" {
